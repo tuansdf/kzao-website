@@ -24,57 +24,100 @@ export default function Home() {
   return (
     <main
       className={
-        "relative h-screen overflow-hidden bg-cover bg-top bg-no-repeat [background-image:url('/background-homepage-compressed.jpg')]"
+        "flex h-screen flex-col items-center justify-center overflow-hidden bg-cover bg-top bg-no-repeat [background-image:url('/background-homepage-compressed.jpg')]"
       }
     >
-      {/* logo */}
-      <button
-        onClick={closeAppointment}
-        className={clsx(
-          "absolute left-1/2 z-20 flex -translate-x-1/2 items-center justify-center transition-all duration-500",
-          {
-            "top-0 w-[350px] translate-y-[7vh]": isAppointmentOpen,
-            "top-1/2 w-[620px] -translate-y-1/2 cursor-default":
-              !isAppointmentOpen,
-          }
-        )}
-      >
-        <Image
-          src={logoType}
-          alt=""
-          className={clsx("absolute transition-all", {
-            "p-6": isAppointmentOpen,
-          })}
-        />
-        <Image src={logoMark} alt="" className="transition-all" />
-      </button>
+      <div className="relative z-10 h-full max-h-[900px] w-full max-w-[1440px]">
+        {/* logo */}
+        <button
+          onClick={closeAppointment}
+          className={clsx(
+            "absolute left-1/2 z-20 flex -translate-x-1/2 items-center justify-center transition-all duration-500",
+            {
+              "top-0 w-[350px] translate-y-12": isAppointmentOpen,
+              "top-1/2 w-[620px] -translate-y-1/2 cursor-default":
+                !isAppointmentOpen,
+            }
+          )}
+        >
+          <Image
+            src={logoType}
+            alt=""
+            className={clsx("absolute transition-all", {
+              "p-6": isAppointmentOpen,
+            })}
+          />
+          <Image src={logoMark} alt="" className="transition-all" />
+        </button>
 
-      {/* open appointment */}
-      <button
-        onClick={toggleAppointment}
-        className={clsx(
-          "absolute left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 text-sm uppercase text-white transition-all duration-500 hover:gap-4",
-          {
-            "bottom-[26px]": !isAppointmentOpen,
-            "bottom-[calc(7vh+550px)]": isAppointmentOpen,
-          }
-        )}
-      >
-        <Image src={curveFlowDown} alt="" />
-        <span>Schedule an appointment</span>
-        <Image src={curveFlowRight} alt="" />
-      </button>
+        {/* open appointment */}
+        <button
+          onClick={toggleAppointment}
+          className={clsx(
+            "absolute left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 text-sm uppercase text-white transition-all duration-500 hover:gap-4",
+            {
+              "bottom-[26px]": !isAppointmentOpen,
+              "bottom-[615px]": isAppointmentOpen,
+            }
+          )}
+        >
+          <Image src={curveFlowDown} alt="" />
+          <span>Schedule an appointment</span>
+          <Image src={curveFlowRight} alt="" />
+        </button>
 
-      {/* appointment */}
-      <div
-        className={clsx(
-          "relative top-full left-1/2 z-20 h-[520px] w-[600px] origin-bottom -translate-x-1/2 rounded-lg bg-white transition-all duration-500",
-          {
-            "-mt-[7vh] -translate-y-full": isAppointmentOpen,
-            "": !isAppointmentOpen,
-          }
-        )}
-      ></div>
+        {/* appointment */}
+        <div
+          className={clsx(
+            "relative top-full left-1/2 z-20 h-[525px] w-[600px] origin-bottom -translate-x-1/2 rounded-lg bg-white transition-all duration-500",
+            {
+              "-mt-16 -translate-y-full": isAppointmentOpen,
+              "opacity-0": !isAppointmentOpen,
+            }
+          )}
+        ></div>
+
+        {/* circle links */}
+        {!isAppointmentOpen ? (
+          <>
+            {/* topo */}
+            <Link
+              href="https://www.instagram.com/k__zao/"
+              target="_blank"
+              className="group absolute top-[145px] left-[615px] flex items-center"
+            >
+              <Image src={circle} alt="" />
+              <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                Handmade something tailoring in providence
+              </div>
+            </Link>
+
+            {/* bottom right */}
+            <Link
+              href="https://www.instagram.com/k__zao/"
+              target="_blank"
+              className="group absolute left-[125px] bottom-[280px] flex items-center"
+            >
+              <Image src={circle} alt="" />
+              <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                New website coming soon
+              </div>
+            </Link>
+
+            {/* bottom left */}
+            <Link
+              href="https://www.instagram.com/k__zao/"
+              target="_blank"
+              className="group absolute bottom-[150px] right-[450px] flex items-center"
+            >
+              <Image src={circle} alt="" />
+              <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                @K__ZAO
+              </div>
+            </Link>
+          </>
+        ) : null}
+      </div>
 
       {/* dim background */}
       <div
@@ -91,42 +134,6 @@ export default function Home() {
           }
         )}
       ></div>
-
-      {/* circle links */}
-      {!isAppointmentOpen ? (
-        <>
-          <Link
-            href="https://www.instagram.com/k__zao/"
-            target="_blank"
-            className="group absolute top-[140px] left-[40vw] flex items-center"
-          >
-            <Image src={circle} alt="" />
-            <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-              Handmade something tailoring in providence
-            </div>
-          </Link>
-          <Link
-            href="https://www.instagram.com/k__zao/"
-            target="_blank"
-            className="group absolute top-[600px] left-[10vw] flex items-center"
-          >
-            <Image src={circle} alt="" />
-            <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-              New website coming soon
-            </div>
-          </Link>
-          <Link
-            href="https://www.instagram.com/k__zao/"
-            target="_blank"
-            className="group absolute top-[725px] right-[30vw] flex items-center"
-          >
-            <Image src={circle} alt="" />
-            <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-              @K__ZAO
-            </div>
-          </Link>
-        </>
-      ) : null}
     </main>
   );
 }
