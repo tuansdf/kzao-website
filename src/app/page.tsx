@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <main
       className={
-        "flex h-screen flex-col items-center justify-center overflow-hidden bg-cover bg-top bg-no-repeat [background-image:url('/background-homepage-compressed.jpg')]"
+        "flex h-screen flex-col items-center justify-center overflow-hidden bg-cover bg-top bg-no-repeat [background-image:url('/background-homepage-compressed.jpg')] md:bg-[0_20%]"
       }
     >
       <div className="relative z-10 h-full max-h-[900px] w-full max-w-[1440px]">
