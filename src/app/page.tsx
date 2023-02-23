@@ -39,7 +39,7 @@ export default function Home() {
             width="800"
             height="400"
             className={clsx(
-              "absolute left-1/2 z-30 -translate-x-1/2 transition-all duration-500",
+              "absolute left-1/2 z-30 -translate-x-1/2 transition-all duration-[750ms]",
               {
                 "top-1/2 -translate-y-1/2 scale-[0.4] cursor-default lg:scale-100":
                   !isAppointmentOpen,
@@ -58,7 +58,7 @@ export default function Home() {
           <button
             onClick={toggleAppointment}
             className={clsx(
-              "absolute bottom-10 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-500 hover:gap-4"
+              "absolute bottom-10 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-[750ms] hover:gap-4"
             )}
           >
             <svg
@@ -97,7 +97,7 @@ export default function Home() {
           {/* appointment */}
           <div
             className={clsx(
-              "absolute left-1/2 z-20 h-[550px] w-full max-w-[400px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-500 lg:h-[660px] lg:w-[1000px] lg:max-w-none",
+              "absolute left-1/2 z-20 h-[550px] w-full max-w-[400px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-[750ms] lg:h-[660px] lg:w-[1000px] lg:max-w-none",
               {
                 "bottom-1/2 translate-y-[calc(50%+4rem)]": isAppointmentOpen,
                 "bottom-0 translate-y-full": !isAppointmentOpen,
@@ -117,7 +117,7 @@ export default function Home() {
               <Link
                 href="https://www.instagram.com/k__zao/"
                 target="_blank"
-                className="group absolute top-[145px] left-[615px] flex items-center"
+                className="group absolute top-[120px] left-1/2 flex -translate-x-1/2 flex-col-reverse items-center gap-4 lg:top-[145px] lg:left-[615px] lg:flex-row lg:gap-0"
               >
                 <svg
                   width="20"
@@ -165,65 +165,9 @@ export default function Home() {
                   </defs>
                 </svg>
 
-                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  exceptionally queer, handcrafted bespoke tailoring
-                </div>
-              </Link>
-
-              {/* bottom right */}
-              <Link
-                href="https://www.instagram.com/k__zao/"
-                target="_blank"
-                className="group absolute left-[125px] bottom-[280px] flex items-center"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g filter="url(#filter0_b_126_1231)">
-                    <circle
-                      cx="10"
-                      cy="10"
-                      r="9.5"
-                      stroke="#FFFCF4"
-                      stroke-dasharray="2 2"
-                    />
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_b_126_1231"
-                      x="-10"
-                      y="-10"
-                      width="40"
-                      height="40"
-                      filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
-                    >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                      <feGaussianBlur
-                        in="BackgroundImageFix"
-                        stdDeviation="5"
-                      />
-                      <feComposite
-                        in2="SourceAlpha"
-                        operator="in"
-                        result="effect1_backgroundBlur_126_1231"
-                      />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="effect1_backgroundBlur_126_1231"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
-
-                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  New website coming soon
+                <div className="whitespace-nowrap text-center text-sm uppercase text-white opacity-100 transition-opacity duration-200 group-hover:opacity-100 lg:absolute lg:left-full lg:pl-2 lg:opacity-0">
+                  exceptionally queer,
+                  <br className="lg:hidden" /> handcrafted bespoke tailoring
                 </div>
               </Link>
 
@@ -231,7 +175,7 @@ export default function Home() {
               <Link
                 href="https://www.instagram.com/k__zao/"
                 target="_blank"
-                className="group absolute bottom-[150px] right-[450px] flex items-center"
+                className="group absolute left-[125px] bottom-[280px] hidden items-center lg:flex"
               >
                 <svg
                   width="20"
@@ -278,7 +222,64 @@ export default function Home() {
                     </filter>
                   </defs>
                 </svg>
-                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+
+                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                  new website coming soon
+                </div>
+              </Link>
+
+              {/* bottom right */}
+              <Link
+                href="https://www.instagram.com/k__zao/"
+                target="_blank"
+                className="group absolute hidden items-center lg:bottom-[150px] lg:right-[450px] lg:flex"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g filter="url(#filter0_b_126_1231)">
+                    <circle
+                      cx="10"
+                      cy="10"
+                      r="9.5"
+                      stroke="#FFFCF4"
+                      stroke-dasharray="2 2"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_b_126_1231"
+                      x="-10"
+                      y="-10"
+                      width="40"
+                      height="40"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feGaussianBlur
+                        in="BackgroundImageFix"
+                        stdDeviation="5"
+                      />
+                      <feComposite
+                        in2="SourceAlpha"
+                        operator="in"
+                        result="effect1_backgroundBlur_126_1231"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_backgroundBlur_126_1231"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                   follow K-zao on Instagram
                 </div>
               </Link>
@@ -289,13 +290,13 @@ export default function Home() {
         {/* dim background */}
         <div
           className={clsx(
-            "absolute inset-0 bg-gradient-to-t from-black/30 via-black/30 to-transparent transition-all duration-300",
+            "absolute inset-0 bg-gradient-to-t from-black/30 via-black/30 to-transparent transition-all duration-[750ms]",
             { "opacity-0": isAppointmentOpen }
           )}
         ></div>
         <div
           className={clsx(
-            "absolute inset-0 bg-black/50 transition-all duration-500",
+            "absolute inset-0 bg-black/50 transition-all duration-[750ms]",
             {
               "opacity-0": !isAppointmentOpen,
             }
