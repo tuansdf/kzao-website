@@ -1,5 +1,6 @@
 "use client";
 
+import KzaoLogo from "@/app/kzao-logo";
 import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
@@ -9,7 +10,6 @@ import { useState } from "react";
 import circle from "/public/circle.svg";
 import curveFlowDown from "/public/curve-flow-down.svg";
 import curveFlowRight from "/public/curve-flow-right.svg";
-import logo from "/public/logo.svg";
 
 export default function Home() {
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
@@ -42,17 +42,15 @@ export default function Home() {
             className={clsx(
               "absolute left-1/2 z-30 -translate-x-1/2 transition-all duration-500",
               {
-                "top-0 w-[350px] translate-y-11": isAppointmentOpen,
-                "top-1/2 w-[620px] -translate-y-1/2 cursor-default":
-                  !isAppointmentOpen,
+                "top-0 translate-y-11": isAppointmentOpen,
+                "top-1/2 -translate-y-1/2 cursor-default": !isAppointmentOpen,
               }
             )}
           >
-            <Image
-              src={logo}
-              alt=""
-              className={"transition-all duration-300"}
-            />
+            <KzaoLogo
+              width={isAppointmentOpen ? "350" : "800"}
+              height={isAppointmentOpen ? "175" : "400"}
+            ></KzaoLogo>
           </button>
 
           {/* open appointment */}
@@ -96,7 +94,7 @@ export default function Home() {
               >
                 <Image src={circle} alt="" />
                 <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  Handmade something tailoring in providence
+                  exceptionally queer, handcrafted bespoke tailoring
                 </div>
               </Link>
 
@@ -120,7 +118,7 @@ export default function Home() {
               >
                 <Image src={circle} alt="" />
                 <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  @K__ZAO
+                  follow K-zao on Instagram
                 </div>
               </Link>
             </>
