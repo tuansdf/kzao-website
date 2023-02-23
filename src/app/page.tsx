@@ -42,7 +42,7 @@ export default function Home() {
             className={clsx(
               "absolute left-1/2 z-30 -translate-x-1/2 transition-all duration-500",
               {
-                "top-0 w-[350px] translate-y-6": isAppointmentOpen,
+                "top-0 w-[350px] translate-y-11": isAppointmentOpen,
                 "top-1/2 w-[620px] -translate-y-1/2 cursor-default":
                   !isAppointmentOpen,
               }
@@ -59,7 +59,7 @@ export default function Home() {
           <button
             onClick={toggleAppointment}
             className={clsx(
-              "absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 text-sm uppercase text-white transition-all duration-500 hover:gap-4"
+              "absolute bottom-10 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 text-sm uppercase text-white transition-all duration-500 hover:gap-4"
             )}
           >
             <Image src={curveFlowDown} alt="" />
