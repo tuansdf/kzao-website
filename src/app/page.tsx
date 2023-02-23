@@ -1,14 +1,9 @@
 "use client";
 
 import clsx from "clsx";
-import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 import { useState } from "react";
-
-import circle from "/public/circle.svg";
-import curveFlowDown from "/public/curve-flow-down.svg";
-import curveFlowRight from "/public/curve-flow-right.svg";
 
 export default function Home() {
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
@@ -36,7 +31,6 @@ export default function Home() {
       >
         <div className="relative z-10 flex h-full w-full max-w-[1440px] flex-col items-center justify-center">
           {/* logo */}
-
           <svg
             viewBox="0 0 620 310"
             fill="none"
@@ -67,11 +61,37 @@ export default function Home() {
               "absolute bottom-10 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-500 hover:gap-4"
             )}
           >
-            <Image src={curveFlowDown} alt="" />
+            <svg
+              width="17"
+              height="22"
+              viewBox="0 0 17 22"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0.34375 1C10.3847 2.50795 17.302 11.8702 15.7941 21.9111"
+                stroke="#FFFCF4"
+                stroke-width="0.65"
+              />
+            </svg>
+
             <span>
               {isAppointmentOpen ? "Close" : "Schedule an appointment"}
             </span>
-            <Image src={curveFlowRight} alt="" />
+
+            <svg
+              width="17"
+              height="23"
+              viewBox="0 0 17 23"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M16.6567 21.9111C6.61578 20.4031 -0.301564 11.0409 1.20639 1"
+                stroke="#FFFCF4"
+                stroke-width="0.65"
+              />
+            </svg>
           </button>
 
           {/* appointment */}
@@ -99,7 +119,52 @@ export default function Home() {
                 target="_blank"
                 className="group absolute top-[145px] left-[615px] flex items-center"
               >
-                <Image src={circle} alt="" />
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g filter="url(#filter0_b_126_1231)">
+                    <circle
+                      cx="10"
+                      cy="10"
+                      r="9.5"
+                      stroke="#FFFCF4"
+                      stroke-dasharray="2 2"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_b_126_1231"
+                      x="-10"
+                      y="-10"
+                      width="40"
+                      height="40"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feGaussianBlur
+                        in="BackgroundImageFix"
+                        stdDeviation="5"
+                      />
+                      <feComposite
+                        in2="SourceAlpha"
+                        operator="in"
+                        result="effect1_backgroundBlur_126_1231"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_backgroundBlur_126_1231"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+
                 <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                   exceptionally queer, handcrafted bespoke tailoring
                 </div>
@@ -111,7 +176,52 @@ export default function Home() {
                 target="_blank"
                 className="group absolute left-[125px] bottom-[280px] flex items-center"
               >
-                <Image src={circle} alt="" />
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g filter="url(#filter0_b_126_1231)">
+                    <circle
+                      cx="10"
+                      cy="10"
+                      r="9.5"
+                      stroke="#FFFCF4"
+                      stroke-dasharray="2 2"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_b_126_1231"
+                      x="-10"
+                      y="-10"
+                      width="40"
+                      height="40"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feGaussianBlur
+                        in="BackgroundImageFix"
+                        stdDeviation="5"
+                      />
+                      <feComposite
+                        in2="SourceAlpha"
+                        operator="in"
+                        result="effect1_backgroundBlur_126_1231"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_backgroundBlur_126_1231"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+
                 <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                   New website coming soon
                 </div>
@@ -123,7 +233,51 @@ export default function Home() {
                 target="_blank"
                 className="group absolute bottom-[150px] right-[450px] flex items-center"
               >
-                <Image src={circle} alt="" />
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g filter="url(#filter0_b_126_1231)">
+                    <circle
+                      cx="10"
+                      cy="10"
+                      r="9.5"
+                      stroke="#FFFCF4"
+                      stroke-dasharray="2 2"
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id="filter0_b_126_1231"
+                      x="-10"
+                      y="-10"
+                      width="40"
+                      height="40"
+                      filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB"
+                    >
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feGaussianBlur
+                        in="BackgroundImageFix"
+                        stdDeviation="5"
+                      />
+                      <feComposite
+                        in2="SourceAlpha"
+                        operator="in"
+                        result="effect1_backgroundBlur_126_1231"
+                      />
+                      <feBlend
+                        mode="normal"
+                        in="SourceGraphic"
+                        in2="effect1_backgroundBlur_126_1231"
+                        result="shape"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
                 <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                   follow K-zao on Instagram
                 </div>
