@@ -14,6 +14,9 @@ import logoType from "/public/logo-type.svg";
 export default function Home() {
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
 
+  const closeAppointment = () => {
+    setIsAppointmentOpen(false);
+  };
   const toggleAppointment = () => {
     setIsAppointmentOpen((prev) => !prev);
   };
@@ -25,12 +28,14 @@ export default function Home() {
       }
     >
       {/* logo */}
-      <div
+      <button
+        onClick={closeAppointment}
         className={clsx(
           "absolute left-1/2 z-20 flex -translate-x-1/2 items-center justify-center transition-all duration-500",
           {
             "top-0 w-[350px] translate-y-14": isAppointmentOpen,
-            "top-1/2 w-[620px] -translate-y-1/2": !isAppointmentOpen,
+            "top-1/2 w-[620px] -translate-y-1/2 cursor-default":
+              !isAppointmentOpen,
           }
         )}
       >
@@ -42,7 +47,7 @@ export default function Home() {
           })}
         />
         <Image src={logoMark} alt="" className="transition-all" />
-      </div>
+      </button>
 
       {/* open appointment */}
       <button
@@ -91,7 +96,7 @@ export default function Home() {
       {!isAppointmentOpen ? (
         <>
           <Link
-            href="#"
+            href="https://www.instagram.com/k__zao/"
             className="group absolute top-[140px] left-[40vw] flex items-center"
           >
             <Image src={circle} alt="" />
