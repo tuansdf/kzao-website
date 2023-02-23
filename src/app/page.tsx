@@ -43,7 +43,7 @@ export default function Home() {
               {
                 "top-1/2 -translate-y-1/2 scale-[0.4] cursor-default lg:scale-100":
                   !isAppointmentOpen,
-                "top-0 -translate-y-16 scale-[0.3375] cursor-pointer lg:scale-[0.4375]":
+                "top-0 -translate-y-20 scale-[0.3375] cursor-pointer lg:-translate-y-16 lg:scale-[0.4375]":
                   isAppointmentOpen,
               }
             )}
@@ -58,7 +58,7 @@ export default function Home() {
           <button
             onClick={toggleAppointment}
             className={clsx(
-              "absolute bottom-10 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-[750ms] hover:gap-4"
+              "absolute bottom-8 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-[750ms] hover:gap-4 lg:bottom-10"
             )}
           >
             <svg
@@ -97,10 +97,10 @@ export default function Home() {
           {/* appointment */}
           <div
             className={clsx(
-              "absolute left-1/2 z-20 h-[550px] w-full max-w-[400px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-[750ms] lg:h-[660px] lg:w-[1000px] lg:max-w-none",
+              "absolute left-1/2 z-20 h-[500px] w-full max-w-[350px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-[750ms] lg:h-[660px] lg:w-[1000px] lg:max-w-none lg:px-0",
               {
                 "bottom-1/2 translate-y-[calc(50%+4rem)]": isAppointmentOpen,
-                "bottom-0 translate-y-full": !isAppointmentOpen,
+                "bottom-0 translate-y-full opacity-0": !isAppointmentOpen,
               }
             )}
           >
