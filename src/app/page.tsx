@@ -33,7 +33,7 @@ export default function Home() {
         className={clsx(
           "absolute left-1/2 z-20 flex -translate-x-1/2 items-center justify-center transition-all duration-500",
           {
-            "top-0 w-[350px] translate-y-14": isAppointmentOpen,
+            "top-0 w-[350px] translate-y-[7vh]": isAppointmentOpen,
             "top-1/2 w-[620px] -translate-y-1/2 cursor-default":
               !isAppointmentOpen,
           }
@@ -56,7 +56,7 @@ export default function Home() {
           "absolute left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 text-sm uppercase text-white transition-all duration-500 hover:gap-4",
           {
             "bottom-[26px]": !isAppointmentOpen,
-            "bottom-[620px]": isAppointmentOpen,
+            "bottom-[calc(7vh+550px)]": isAppointmentOpen,
           }
         )}
       >
@@ -70,7 +70,7 @@ export default function Home() {
         className={clsx(
           "relative top-full left-1/2 z-20 h-[520px] w-[600px] origin-bottom -translate-x-1/2 rounded-lg bg-white transition-all duration-500",
           {
-            "-mt-16 -translate-y-full": isAppointmentOpen,
+            "-mt-[7vh] -translate-y-full": isAppointmentOpen,
             "": !isAppointmentOpen,
           }
         )}
@@ -97,6 +97,7 @@ export default function Home() {
         <>
           <Link
             href="https://www.instagram.com/k__zao/"
+            target="_blank"
             className="group absolute top-[140px] left-[40vw] flex items-center"
           >
             <Image src={circle} alt="" />
@@ -105,7 +106,8 @@ export default function Home() {
             </div>
           </Link>
           <Link
-            href="#"
+            href="https://www.instagram.com/k__zao/"
+            target="_blank"
             className="group absolute top-[600px] left-[10vw] flex items-center"
           >
             <Image src={circle} alt="" />
@@ -114,7 +116,8 @@ export default function Home() {
             </div>
           </Link>
           <Link
-            href="#"
+            href="https://www.instagram.com/k__zao/"
+            target="_blank"
             className="group absolute top-[725px] right-[30vw] flex items-center"
           >
             <Image src={circle} alt="" />
