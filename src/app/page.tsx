@@ -95,7 +95,7 @@ export default function Home() {
                 className="group absolute top-[145px] left-[615px] flex items-center"
               >
                 <Image src={circle} alt="" />
-                <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                   Handmade something tailoring in providence
                 </div>
               </Link>
@@ -107,7 +107,7 @@ export default function Home() {
                 className="group absolute left-[125px] bottom-[280px] flex items-center"
               >
                 <Image src={circle} alt="" />
-                <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                   New website coming soon
                 </div>
               </Link>
@@ -119,7 +119,7 @@ export default function Home() {
                 className="group absolute bottom-[150px] right-[450px] flex items-center"
               >
                 <Image src={circle} alt="" />
-                <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                   @K__ZAO
                 </div>
               </Link>
