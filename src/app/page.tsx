@@ -47,9 +47,9 @@ export default function Home() {
             className={clsx(
               "absolute left-1/2 z-30 -translate-x-1/2 transition-all duration-500",
               {
-                "top-1/2 h-[160px] w-[320px] -translate-y-1/2 cursor-default lg:h-[400px] lg:w-[800px]":
+                "top-1/2 -translate-y-1/2 scale-[0.4] cursor-default lg:scale-100":
                   !isAppointmentOpen,
-                "top-0 h-[135px] w-[270px] translate-y-11 lg:h-[175px] lg:w-[350px]":
+                "top-0 -translate-y-16 scale-[0.3375] cursor-pointer lg:scale-[0.4375]":
                   isAppointmentOpen,
               }
             )}
