@@ -1,91 +1,124 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
+"use client";
 
-const inter = Inter({ subsets: ['latin'] })
+import clsx from "clsx";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+
+import circle from "/public/circle.svg";
+import curveFlowDown from "/public/curve-flow-down.svg";
+import curveFlowRight from "/public/curve-flow-right.svg";
+import logoMark from "/public/logo-mark.svg";
+import logoType from "/public/logo-type.svg";
 
 export default function Home() {
+  const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
+
+  const toggleAppointment = () => {
+    setIsAppointmentOpen((prev) => !prev);
+  };
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className={styles.center}>
+    <main
+      className={
+        "relative h-screen overflow-hidden bg-cover bg-top bg-no-repeat [background-image:url('/background-homepage-compressed.jpg')]"
+      }
+    >
+      {/* logo */}
+      <div
+        className={clsx(
+          "absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center transition-all duration-500",
+          {
+            "top-0 w-[350px] translate-y-8": isAppointmentOpen,
+            "w-[620px]": !isAppointmentOpen,
+          }
+        )}
+      >
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+          src={logoType}
+          alt=""
+          className={clsx("absolute transition-all", {
+            "p-6": isAppointmentOpen,
+          })}
         />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
+        <Image src={logoMark} alt="" className="transition-all" />
       </div>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* open appointment */}
+      <button
+        onClick={toggleAppointment}
+        className={clsx(
+          "absolute left-1/2 z-20 flex -translate-x-1/2 items-center gap-3 text-sm uppercase text-white transition-all duration-500 hover:gap-4",
+          {
+            "bottom-[20px]": !isAppointmentOpen,
+            "bottom-[560px]": isAppointmentOpen,
+          }
+        )}
+      >
+        <Image src={curveFlowDown} alt="" />
+        <span>Schedule an appointment</span>
+        <Image src={curveFlowRight} alt="" />
+      </button>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
+      {/* appointment */}
+      <div
+        className={clsx(
+          "relative top-full left-1/2 z-20 h-[520px] w-[600px] origin-bottom -translate-x-1/2 rounded-lg bg-white transition-all duration-500",
+          {
+            "-mt-4 -translate-y-full": isAppointmentOpen,
+            "": !isAppointmentOpen,
+          }
+        )}
+      ></div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      {/* dim background */}
+      <div
+        className={clsx(
+          "absolute inset-0 bg-gradient-to-t from-black/30 to-transparent transition-all duration-300",
+          { "opacity-0": isAppointmentOpen }
+        )}
+      ></div>
+      <div
+        className={clsx(
+          "absolute inset-0 bg-black/30 transition-all duration-500",
+          {
+            "opacity-0": !isAppointmentOpen,
+          }
+        )}
+      ></div>
+
+      {/* circle links */}
+      {!isAppointmentOpen ? (
+        <>
+          <Link
+            href="#"
+            className="group absolute top-[140px] left-[40vw] flex items-center"
+          >
+            <Image src={circle} alt="" />
+            <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              Handmade something tailoring in providence
+            </div>
+          </Link>
+          <Link
+            href="#"
+            className="group absolute top-[600px] left-[120px] flex items-center"
+          >
+            <Image src={circle} alt="" />
+            <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              New website coming soon
+            </div>
+          </Link>
+          <Link
+            href="#"
+            className="group absolute top-[725px] right-[30vw] flex items-center"
+          >
+            <Image src={circle} alt="" />
+            <div className="absolute left-full whitespace-nowrap pl-2 text-xs uppercase text-white/90 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              @K__ZAO
+            </div>
+          </Link>
+        </>
+      ) : null}
     </main>
-  )
+  );
 }
