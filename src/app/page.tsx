@@ -50,7 +50,7 @@ export default function Home() {
             width="800"
             height="400"
             className={clsx(
-              "absolute left-1/2 z-30 -translate-x-1/2 transition-all duration-[750ms]",
+              "absolute left-1/2 z-30 -translate-x-1/2 transition-all duration-[800ms]",
               {
                 "top-1/2 -translate-y-1/2 scale-[0.4] cursor-default sm:scale-50 md:scale-75 lg:scale-100":
                   !isAppointmentOpen,
@@ -69,7 +69,11 @@ export default function Home() {
           <button
             onClick={toggleAppointment}
             className={clsx(
-              "absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-[750ms] hover:gap-4 lg:bottom-10"
+              "absolute left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-[800ms] hover:gap-4 lg:bottom-10",
+              {
+                "bottom-6": isAppointmentOpen,
+                "bottom-10": !isAppointmentOpen,
+              }
             )}
           >
             <svg
@@ -108,7 +112,7 @@ export default function Home() {
           {/* appointment */}
           <div
             className={clsx(
-              "absolute left-1/2 z-20 h-[450px] w-full max-w-[320px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-[750ms] lg:h-[660px] lg:w-[1000px] lg:max-w-none lg:px-0",
+              "absolute left-1/2 z-20 h-[450px] w-full max-w-[320px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-[800ms] lg:h-[660px] lg:w-[1000px] lg:max-w-none lg:px-0",
               {
                 "bottom-1/2 translate-y-[calc(50%+4rem)]": isAppointmentOpen,
                 "bottom-0 translate-y-full opacity-0": !isAppointmentOpen,
@@ -122,192 +126,188 @@ export default function Home() {
           </div>
 
           {/* circle links */}
-          {!isAppointmentOpen ? (
-            <>
-              {/* top */}
-              <Link
-                href="https://www.instagram.com/k__zao/"
-                target="_blank"
-                className="group absolute top-[120px] left-1/2 flex -translate-x-1/2 flex-col-reverse items-center gap-4 lg:top-[145px] lg:left-[615px] lg:flex-row lg:gap-0"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+          {/* top */}
+          <Link
+            href="https://www.instagram.com/k__zao/"
+            target="_blank"
+            className={clsx(
+              "group absolute top-[120px] left-1/2 flex -translate-x-1/2 flex-col-reverse items-center gap-4 transition-opacity duration-500 lg:top-[145px] lg:left-[615px] lg:flex-row lg:gap-0",
+              { "opacity-0": isAppointmentOpen }
+            )}
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_b_126_1231)">
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9.5"
+                  stroke="#FFFCF4"
+                  strokeDasharray="2 2"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_b_126_1231"
+                  x="-10"
+                  y="-10"
+                  width="40"
+                  height="40"
+                  filterUnits="userSpaceOnUse"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <g filter="url(#filter0_b_126_1231)">
-                    <circle
-                      cx="10"
-                      cy="10"
-                      r="9.5"
-                      stroke="#FFFCF4"
-                      strokeDasharray="2 2"
-                    />
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_b_126_1231"
-                      x="-10"
-                      y="-10"
-                      width="40"
-                      height="40"
-                      filterUnits="userSpaceOnUse"
-                      colorInterpolationFilters="sRGB"
-                    >
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feGaussianBlur
-                        in="BackgroundImageFix"
-                        stdDeviation="5"
-                      />
-                      <feComposite
-                        in2="SourceAlpha"
-                        operator="in"
-                        result="effect1_backgroundBlur_126_1231"
-                      />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="effect1_backgroundBlur_126_1231"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="5" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_126_1231"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_backgroundBlur_126_1231"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
 
-                <div className="whitespace-nowrap text-center text-sm uppercase text-white opacity-100 transition-opacity duration-200 group-hover:opacity-100 lg:absolute lg:left-full lg:pl-2 lg:opacity-0">
-                  exceptionally queer,
-                  <br className="lg:hidden" /> handcrafted bespoke tailoring
-                </div>
-              </Link>
+            <div className="whitespace-nowrap text-center text-sm uppercase text-white opacity-100 transition-opacity duration-300 group-hover:opacity-100 lg:absolute lg:left-full lg:pl-2 lg:opacity-0">
+              exceptionally queer,
+              <br className="lg:hidden" /> handcrafted bespoke tailoring
+            </div>
+          </Link>
 
-              {/* bottom left */}
-              <Link
-                href="https://www.instagram.com/k__zao/"
-                target="_blank"
-                className="group absolute left-[125px] bottom-[280px] hidden items-center lg:flex"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+          {/* bottom left */}
+          <Link
+            href="https://www.instagram.com/k__zao/"
+            target="_blank"
+            className={clsx(
+              "group absolute left-[125px] bottom-[280px] hidden items-center transition-opacity duration-500 lg:flex",
+              { "opacity-0": isAppointmentOpen }
+            )}
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_b_126_1231)">
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9.5"
+                  stroke="#FFFCF4"
+                  strokeDasharray="2 2"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_b_126_1231"
+                  x="-10"
+                  y="-10"
+                  width="40"
+                  height="40"
+                  filterUnits="userSpaceOnUse"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <g filter="url(#filter0_b_126_1231)">
-                    <circle
-                      cx="10"
-                      cy="10"
-                      r="9.5"
-                      stroke="#FFFCF4"
-                      strokeDasharray="2 2"
-                    />
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_b_126_1231"
-                      x="-10"
-                      y="-10"
-                      width="40"
-                      height="40"
-                      filterUnits="userSpaceOnUse"
-                      colorInterpolationFilters="sRGB"
-                    >
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feGaussianBlur
-                        in="BackgroundImageFix"
-                        stdDeviation="5"
-                      />
-                      <feComposite
-                        in2="SourceAlpha"
-                        operator="in"
-                        result="effect1_backgroundBlur_126_1231"
-                      />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="effect1_backgroundBlur_126_1231"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="5" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_126_1231"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_backgroundBlur_126_1231"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
 
-                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  new website coming soon
-                </div>
-              </Link>
+            <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              new website coming soon
+            </div>
+          </Link>
 
-              {/* bottom right */}
-              <Link
-                href="https://www.instagram.com/k__zao/"
-                target="_blank"
-                className="group absolute hidden items-center lg:bottom-[150px] lg:right-[450px] lg:flex"
-              >
-                <svg
-                  width="20"
-                  height="20"
-                  viewBox="0 0 20 20"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+          {/* bottom right */}
+          <Link
+            href="https://www.instagram.com/k__zao/"
+            target="_blank"
+            className={clsx(
+              "group absolute hidden items-center transition-opacity duration-500 lg:bottom-[150px] lg:right-[450px] lg:flex",
+              { "opacity-0": isAppointmentOpen }
+            )}
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 20 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g filter="url(#filter0_b_126_1231)">
+                <circle
+                  cx="10"
+                  cy="10"
+                  r="9.5"
+                  stroke="#FFFCF4"
+                  strokeDasharray="2 2"
+                />
+              </g>
+              <defs>
+                <filter
+                  id="filter0_b_126_1231"
+                  x="-10"
+                  y="-10"
+                  width="40"
+                  height="40"
+                  filterUnits="userSpaceOnUse"
+                  colorInterpolationFilters="sRGB"
                 >
-                  <g filter="url(#filter0_b_126_1231)">
-                    <circle
-                      cx="10"
-                      cy="10"
-                      r="9.5"
-                      stroke="#FFFCF4"
-                      strokeDasharray="2 2"
-                    />
-                  </g>
-                  <defs>
-                    <filter
-                      id="filter0_b_126_1231"
-                      x="-10"
-                      y="-10"
-                      width="40"
-                      height="40"
-                      filterUnits="userSpaceOnUse"
-                      colorInterpolationFilters="sRGB"
-                    >
-                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                      <feGaussianBlur
-                        in="BackgroundImageFix"
-                        stdDeviation="5"
-                      />
-                      <feComposite
-                        in2="SourceAlpha"
-                        operator="in"
-                        result="effect1_backgroundBlur_126_1231"
-                      />
-                      <feBlend
-                        mode="normal"
-                        in="SourceGraphic"
-                        in2="effect1_backgroundBlur_126_1231"
-                        result="shape"
-                      />
-                    </filter>
-                  </defs>
-                </svg>
-                <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                  follow K-zao on Instagram
-                </div>
-              </Link>
-            </>
-          ) : null}
+                  <feFlood floodOpacity="0" result="BackgroundImageFix" />
+                  <feGaussianBlur in="BackgroundImageFix" stdDeviation="5" />
+                  <feComposite
+                    in2="SourceAlpha"
+                    operator="in"
+                    result="effect1_backgroundBlur_126_1231"
+                  />
+                  <feBlend
+                    mode="normal"
+                    in="SourceGraphic"
+                    in2="effect1_backgroundBlur_126_1231"
+                    result="shape"
+                  />
+                </filter>
+              </defs>
+            </svg>
+            <div className="absolute left-full whitespace-nowrap pl-2 text-sm uppercase text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+              follow K-zao on Instagram
+            </div>
+          </Link>
         </div>
 
         {/* dim background */}
         <div
           className={clsx(
-            "absolute inset-0 bg-gradient-to-t from-black/30 via-black/30 to-transparent transition-all duration-[750ms]",
+            "absolute inset-0 bg-gradient-to-t from-black/30 via-black/30 to-transparent transition-opacity duration-[800ms]",
             { "opacity-0": isAppointmentOpen }
           )}
         ></div>
         <div
           className={clsx(
-            "absolute inset-0 bg-black/50 transition-all duration-[750ms]",
+            "absolute inset-0 bg-black/50 transition-opacity duration-[800ms]",
             {
               "opacity-0": !isAppointmentOpen,
             }
