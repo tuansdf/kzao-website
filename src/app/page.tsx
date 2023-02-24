@@ -69,11 +69,7 @@ export default function Home() {
           <button
             onClick={toggleAppointment}
             className={clsx(
-              "absolute left-1/2 z-30 flex -translate-x-1/2 items-center justify-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-[800ms] hover:gap-4 lg:bottom-10",
-              {
-                "bottom-6": isAppointmentOpen,
-                "bottom-10": !isAppointmentOpen,
-              }
+              "absolute left-1/2 bottom-6 z-30 flex -translate-x-1/2 items-center justify-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-[800ms] hover:gap-4 lg:bottom-10"
             )}
           >
             <svg
@@ -123,9 +119,10 @@ export default function Home() {
           {/* appointment */}
           <div
             className={clsx(
-              "absolute left-1/2 z-20 h-[450px] w-full max-w-[320px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-[800ms] lg:h-[660px] lg:w-[1000px] lg:max-w-none lg:px-0",
+              "absolute left-1/2 z-20 h-[475px] w-full max-w-[330px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-[800ms] lg:h-[660px] lg:w-[1000px] lg:max-w-none lg:px-0",
               {
-                "bottom-1/2 translate-y-[calc(50%+4rem)]": isAppointmentOpen,
+                "bottom-1/2 translate-y-[calc(50%+3.5rem)] lg:translate-y-[calc(50%+3.75rem)]":
+                  isAppointmentOpen, // 50% container height + (logo height - open button height) / 2
                 "bottom-0 translate-y-full opacity-0": !isAppointmentOpen,
               }
             )}
@@ -137,12 +134,43 @@ export default function Home() {
           </div>
 
           {/* circle links */}
+          {/* mobile only */}
+          <Link
+            href="https://www.instagram.com/k__zao/"
+            target="_blank"
+            className={clsx(
+              "absolute top-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-4 text-center transition-opacity duration-300 hover:opacity-90 lg:hidden",
+              {
+                "opacity-0": isAppointmentOpen,
+              }
+            )}
+          >
+            <div className="text-sm uppercase text-white">
+              Handmade queer tailoring
+              <br />
+              in providence
+            </div>
+
+            <svg
+              width="17"
+              height="16"
+              viewBox="0 0 17 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M5.83417 8C5.83417 6.5273 7.02737 5.33312 8.49964 5.33312C9.97192 5.33312 11.1658 6.5273 11.1658 8C11.1658 9.4727 9.97192 10.6669 8.49964 10.6669C7.02737 10.6669 5.83417 9.4727 5.83417 8ZM4.39293 8C4.39293 10.2688 6.2315 12.1079 8.49964 12.1079C10.7678 12.1079 12.6064 10.2688 12.6064 8C12.6064 5.7312 10.7678 3.8921 8.49964 3.8921C6.2315 3.8921 4.39293 5.7312 4.39293 8ZM11.8092 3.72922C11.8091 3.91909 11.8654 4.10471 11.9707 4.26263C12.0761 4.42054 12.226 4.54365 12.4013 4.61638C12.5767 4.68911 12.7696 4.7082 12.9558 4.67123C13.142 4.63426 13.313 4.5429 13.4473 4.40869C13.5816 4.27449 13.673 4.10347 13.7101 3.91726C13.7473 3.73106 13.7283 3.53802 13.6558 3.36258C13.5832 3.18713 13.4602 3.03715 13.3025 2.9316C13.1447 2.82605 12.9591 2.76968 12.7693 2.7696H12.7689C12.5145 2.76972 12.2705 2.87085 12.0906 3.05077C11.9106 3.2307 11.8094 3.47471 11.8092 3.72922ZM5.26858 14.5118C4.48883 14.4763 4.06502 14.3464 3.78337 14.2366C3.40998 14.0912 3.14356 13.918 2.86345 13.6382C2.58334 13.3584 2.40995 13.0922 2.26522 12.7187C2.15543 12.4371 2.02555 12.013 1.9901 11.233C1.95133 10.3898 1.94359 10.1364 1.94359 8.00006C1.94359 5.86368 1.95197 5.61107 1.9901 4.7671C2.02561 3.98714 2.15645 3.5639 2.26522 3.28147C2.41059 2.90797 2.58372 2.64147 2.86345 2.36128C3.14317 2.08109 3.40934 1.90765 3.78337 1.76288C4.06489 1.65306 4.48883 1.52314 5.26858 1.48768C6.1116 1.4489 6.36484 1.44115 8.49964 1.44115C10.6345 1.44115 10.8879 1.44954 11.7317 1.48768C12.5114 1.5232 12.9345 1.65408 13.2169 1.76288C13.5903 1.90765 13.8567 2.08147 14.1368 2.36128C14.4169 2.64109 14.5897 2.90797 14.735 3.28147C14.8448 3.56307 14.9747 3.98714 15.0101 4.7671C15.0489 5.61107 15.0567 5.86368 15.0567 8.00006C15.0567 10.1364 15.0489 10.3891 15.0101 11.233C14.9746 12.013 14.8441 12.4369 14.735 12.7187C14.5897 13.0922 14.4165 13.3587 14.1368 13.6382C13.8571 13.9178 13.5903 14.0912 13.2169 14.2366C12.9354 14.3464 12.5114 14.4764 11.7317 14.5118C10.8887 14.5506 10.6354 14.5583 8.49964 14.5583C6.36388 14.5583 6.11134 14.5506 5.26858 14.5118ZM5.20236 0.048448C4.35095 0.087232 3.76917 0.222272 3.26109 0.420032C2.73491 0.624256 2.28947 0.89824 1.84435 1.34278C1.39923 1.78733 1.12603 2.2336 0.921864 2.75994C0.724161 3.26848 0.58916 3.85011 0.550387 4.70176C0.510975 5.55475 0.501953 5.82746 0.501953 8C0.501953 10.1725 0.510975 10.4452 0.550387 11.2982C0.58916 12.15 0.724161 12.7315 0.921864 13.2401C1.12603 13.7661 1.39929 14.2129 1.84435 14.6572C2.28941 15.1016 2.73491 15.3752 3.26109 15.58C3.77013 15.7777 4.35095 15.9128 5.20236 15.9516C6.05555 15.9903 6.32773 16 8.49964 16C10.6716 16 10.9442 15.991 11.7969 15.9516C12.6484 15.9128 13.2298 15.7777 13.7382 15.58C14.2641 15.3752 14.7098 15.1018 15.1549 14.6572C15.6001 14.2127 15.8727 13.7661 16.0774 13.2401C16.2751 12.7315 16.4108 12.1499 16.4489 11.2982C16.4877 10.4446 16.4967 10.1725 16.4967 8C16.4967 5.82746 16.4877 5.55475 16.4489 4.70176C16.4101 3.85005 16.2751 3.26816 16.0774 2.75994C15.8727 2.23392 15.5994 1.78803 15.1549 1.34278C14.7105 0.897536 14.2641 0.624256 13.7388 0.420032C13.2298 0.222272 12.6483 0.086592 11.7976 0.048448C10.9448 0.009664 10.6722 0 8.50028 0C6.32837 0 6.05555 0.009024 5.20236 0.048448Z"
+                fill="white"
+              />
+            </svg>
+          </Link>
+
           {/* top */}
           <Link
             href="https://www.instagram.com/k__zao/"
             target="_blank"
             className={clsx(
-              "group absolute top-10 left-1/2 flex -translate-x-1/2 flex-col-reverse items-center gap-4 transition-opacity duration-500 lg:top-[145px] lg:left-[615px] lg:flex-row lg:gap-0",
+              "group absolute top-[145px] left-[615px] hidden items-center transition-opacity duration-500 lg:flex",
               { "opacity-0": isAppointmentOpen }
             )}
           >
@@ -189,9 +217,8 @@ export default function Home() {
               </defs>
             </svg>
 
-            <div className="whitespace-nowrap text-center text-sm uppercase text-white opacity-100 transition-opacity duration-300 group-hover:opacity-100 lg:absolute lg:left-full lg:pl-2 lg:opacity-0">
-              exceptionally queer,
-              <br className="lg:hidden" /> handcrafted bespoke tailoring
+            <div className="whitespace-nowrap text-center text-sm uppercase text-white transition-opacity duration-300 group-hover:opacity-100 lg:absolute lg:left-full lg:pl-2 lg:opacity-0">
+              exceptionally queer, handcrafted bespoke tailoring
             </div>
           </Link>
 
