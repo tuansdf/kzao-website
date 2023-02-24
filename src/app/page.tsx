@@ -51,11 +51,11 @@ export default function Home() {
           <KzaoLogo
             onClick={closeAppointment}
             className={clsx(
-              "absolute left-1/2 z-30 -translate-x-1/2 transition-all duration-[800ms]",
+              "absolute left-1/2 z-30 h-[400px] w-[800px] -translate-x-1/2 transition-all duration-[800ms]",
               {
-                "top-1/2 w-[330px] -translate-y-1/2 cursor-default sm:w-[400px] md:w-[600px] lg:w-[800px]":
+                "top-1/2 -translate-y-1/2 scale-[0.4] cursor-default sm:scale-50 md:scale-75 lg:scale-100":
                   !isAppointmentOpen,
-                "top-0 w-[265px] origin-top translate-y-6 cursor-pointer lg:w-[350px] lg:translate-y-10":
+                "top-0 origin-top translate-y-6 scale-[0.3375] cursor-pointer lg:translate-y-10 lg:scale-[0.4375]":
                   isAppointmentOpen,
               }
             )}
@@ -118,9 +118,9 @@ export default function Home() {
             )}
           >
             <div className="text-sm uppercase text-white">
-              Handmade queer tailoring
+              exceptionally queer,
               <br />
-              in providence
+              handcrafted bespoke tailoring
             </div>
 
             <InstagramIcon />
