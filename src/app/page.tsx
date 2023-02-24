@@ -91,7 +91,7 @@ export default function Home() {
           {/* appointment */}
           <div
             className={clsx(
-              "absolute left-1/2 z-20 h-[475px] w-full max-w-[330px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-[800ms] lg:h-[660px] lg:w-[1000px] lg:max-w-none lg:px-0",
+              "absolute left-1/2 z-20 h-[500px] w-full max-w-[350px] -translate-x-1/2 overflow-hidden rounded-lg transition-all duration-[800ms] lg:h-[660px] lg:w-[1000px] lg:max-w-none lg:px-0",
               {
                 "bottom-1/2 translate-y-[calc(50%+3.5rem)] lg:translate-y-[calc(50%+3.75rem)]":
                   isAppointmentOpen, // 50% container height + (logo height - open button height) / 2
