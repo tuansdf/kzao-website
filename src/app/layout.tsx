@@ -10,9 +10,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <head />
-      <body className={primaryFont.className + " min-h-screen"}>
-        {children}
-      </body>
+      <body className={primaryFont.className}>{children}</body>
     </html>
   );
 }

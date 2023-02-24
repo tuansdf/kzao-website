@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Script from "next/script";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isAppointmentOpen, setIsAppointmentOpen] = useState(false);
@@ -14,6 +14,17 @@ export default function Home() {
   const toggleAppointment = () => {
     setIsAppointmentOpen((prev) => !prev);
   };
+
+  const updateVhOnResize = () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", updateVhOnResize);
+
+    return () => removeEventListener("resize", updateVhOnResize);
+  }, []);
 
   return (
     <>
@@ -26,7 +37,7 @@ export default function Home() {
 
       <main
         className={
-          "flex h-screen flex-col items-center justify-center overflow-hidden bg-cover bg-[50%_0] bg-no-repeat [background-image:url('/background-homepage-compressed.jpg')] md:bg-[50%_20%]"
+          "dh-full flex flex-col items-center justify-center overflow-hidden bg-cover bg-[50%_0] bg-no-repeat [background-image:url('/background-homepage-compressed.jpg')] md:bg-[50%_20%]"
         }
       >
         <div className="relative z-10 flex h-full w-full max-w-[1440px] flex-col items-center justify-center">
