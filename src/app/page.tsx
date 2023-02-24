@@ -69,7 +69,7 @@ export default function Home() {
           <button
             onClick={toggleAppointment}
             className={clsx(
-              "absolute left-1/2 z-30 flex -translate-x-1/2 items-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-[800ms] hover:gap-4 lg:bottom-10",
+              "absolute left-1/2 z-30 flex -translate-x-1/2 items-center justify-center gap-3 whitespace-nowrap text-sm uppercase text-white transition-all duration-[800ms] hover:gap-4 lg:bottom-10",
               {
                 "bottom-6": isAppointmentOpen,
                 "bottom-10": !isAppointmentOpen,
@@ -90,8 +90,19 @@ export default function Home() {
               />
             </svg>
 
-            <span>
-              {isAppointmentOpen ? "Close" : "Schedule an appointment"}
+            <span
+              className={clsx("transition-opacity duration-300", {
+                "absolute -z-50 opacity-0": !isAppointmentOpen,
+              })}
+            >
+              Close
+            </span>
+            <span
+              className={clsx("transition-opacity duration-300", {
+                "absolute -z-50 opacity-0": isAppointmentOpen,
+              })}
+            >
+              Schedule an appointment
             </span>
 
             <svg
