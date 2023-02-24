@@ -117,7 +117,7 @@ export default function Home() {
               }
             )}
           >
-            <div className="text-sm uppercase text-white">
+            <div className="whitespace-nowrap text-sm uppercase text-white">
               exceptionally queer,
               <br />
               handcrafted bespoke tailoring
