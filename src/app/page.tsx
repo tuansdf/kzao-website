@@ -41,7 +41,7 @@ export default function Home() {
             className={clsx(
               "absolute left-1/2 z-30 -translate-x-1/2 transition-all duration-[750ms]",
               {
-                "top-1/2 -translate-y-1/2 scale-[0.4] cursor-default lg:scale-100":
+                "top-1/2 -translate-y-1/2 scale-[0.4] cursor-default sm:scale-50 md:scale-75 lg:scale-100":
                   !isAppointmentOpen,
                 "top-0 -translate-y-20 scale-[0.3375] cursor-pointer lg:-translate-y-16 lg:scale-[0.4375]":
                   isAppointmentOpen,
@@ -71,7 +71,7 @@ export default function Home() {
               <path
                 d="M0.34375 1C10.3847 2.50795 17.302 11.8702 15.7941 21.9111"
                 stroke="#FFFCF4"
-                stroke-width="0.65"
+                strokeWidth="0.65"
               />
             </svg>
 
@@ -89,7 +89,7 @@ export default function Home() {
               <path
                 d="M16.6567 21.9111C6.61578 20.4031 -0.301564 11.0409 1.20639 1"
                 stroke="#FFFCF4"
-                stroke-width="0.65"
+                strokeWidth="0.65"
               />
             </svg>
           </button>
@@ -132,7 +132,7 @@ export default function Home() {
                       cy="10"
                       r="9.5"
                       stroke="#FFFCF4"
-                      stroke-dasharray="2 2"
+                      strokeDasharray="2 2"
                     />
                   </g>
                   <defs>
@@ -143,9 +143,9 @@ export default function Home() {
                       width="40"
                       height="40"
                       filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
+                      colorInterpolationFilters="sRGB"
                     >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
                       <feGaussianBlur
                         in="BackgroundImageFix"
                         stdDeviation="5"
@@ -190,7 +190,7 @@ export default function Home() {
                       cy="10"
                       r="9.5"
                       stroke="#FFFCF4"
-                      stroke-dasharray="2 2"
+                      strokeDasharray="2 2"
                     />
                   </g>
                   <defs>
@@ -201,9 +201,9 @@ export default function Home() {
                       width="40"
                       height="40"
                       filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
+                      colorInterpolationFilters="sRGB"
                     >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
                       <feGaussianBlur
                         in="BackgroundImageFix"
                         stdDeviation="5"
@@ -247,7 +247,7 @@ export default function Home() {
                       cy="10"
                       r="9.5"
                       stroke="#FFFCF4"
-                      stroke-dasharray="2 2"
+                      strokeDasharray="2 2"
                     />
                   </g>
                   <defs>
@@ -258,9 +258,9 @@ export default function Home() {
                       width="40"
                       height="40"
                       filterUnits="userSpaceOnUse"
-                      color-interpolation-filters="sRGB"
+                      colorInterpolationFilters="sRGB"
                     >
-                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feFlood floodOpacity="0" result="BackgroundImageFix" />
                       <feGaussianBlur
                         in="BackgroundImageFix"
                         stdDeviation="5"
