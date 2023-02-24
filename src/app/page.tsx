@@ -54,7 +54,7 @@ export default function Home() {
               {
                 "top-1/2 -translate-y-1/2 scale-[0.4] cursor-default sm:scale-50 md:scale-75 lg:scale-100":
                   !isAppointmentOpen,
-                "top-0 -translate-y-24 scale-[0.3375] cursor-pointer lg:-translate-y-16 lg:scale-[0.4375]":
+                "top-0 origin-top translate-y-6 scale-[0.3375] cursor-pointer lg:translate-y-10 lg:scale-[0.4375]":
                   isAppointmentOpen,
               }
             )}
@@ -142,7 +142,7 @@ export default function Home() {
             href="https://www.instagram.com/k__zao/"
             target="_blank"
             className={clsx(
-              "group absolute top-[120px] left-1/2 flex -translate-x-1/2 flex-col-reverse items-center gap-4 transition-opacity duration-500 lg:top-[145px] lg:left-[615px] lg:flex-row lg:gap-0",
+              "group absolute top-10 left-1/2 flex -translate-x-1/2 flex-col-reverse items-center gap-4 transition-opacity duration-500 lg:top-[145px] lg:left-[615px] lg:flex-row lg:gap-0",
               { "opacity-0": isAppointmentOpen }
             )}
           >
