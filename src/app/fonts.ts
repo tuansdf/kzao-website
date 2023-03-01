@@ -1,6 +1,7 @@
-import { Space_Mono } from "@next/font/google";
+import { Space_Mono } from "next/font/google";
 
 export const primaryFont = Space_Mono({
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
 });
